@@ -1,0 +1,1236 @@
+/// Java Notess
+
+
+Math.max(5,6)
+Math.min(7,9)
+System.out.printf("5 * 2 = %d",5*2).println // this will print the calculated value
+%d for int
+%s for string
+%f for floating numbers
+//if we concanate any integer with string it will return  concanated string.
+"1" + 2+ 4   O/p --> "124"
+"1" + (2 +3)  O/p ---> "15"
+
+// Method OverLoading
+void calculateArea(int n)
+void calculateArea(int n,int y)
+
+
+
+we have default constructor when we don't have any constructor in class.
+but as soon as we create the constructor the default contructor is gone.
+then  Car car = new Car()   --- after declaring the constructor this wont work..
+
+
+Data types
+> Integer         >Floating Point      >Boolean        >Character(2 bytes)           >BigDecimal is a Class
+ .byte             .double             .true          .char                           BigDecimal number1 = new BigDecimal("123264.9999999");
+ .short            .float              .false          char a = 'c';                    BigDecimal number2 = new BigDecimal("123768.9786999");
+ .int             float = 36.78f                       char ch3 = '\u00A2'               BigDecimal number3 = number1.add(number2)	
+ .long            float = 36.78F                       unicode value                      number3 will be the accurate number 
+	                                                ch + 5 = int                  > we can't change the values of number1 , number2 or number3
+smaller to larger                                      ch = 'a';                                bcz they are immutable values(BigDecimal class objects are immutable)
+int to long                                         ++ch ='b';                    > you can only perform operations BigDecimal to BigDecimal,if you want to add int then you 
+                                                                                     have to create new BigDecimal
+larger to smaller                                                                  > eg: number.add(new BigDecimal(i)); // i is int here and number is alreay BigDecimal.
+Typecasting   int = (int)Long	
+
+
+		
+>Difference between & and &&;
+for eg:  j > 15 && j++ > 15;// In this case the (j >15) is only evaluated and if its false the compiler will not go to second expression.
+         j > 15 & j++ > 17 ;// In this case the result will be same as (&&) but the compiler will evaluate the second expression as well.
+		 
+		 
+>Methods in char:
+isVowel('a')// returns true;
+isConsonant('a') // returns false;
+
+
+> Ternory operator:
+iseven = (condition ? valueifconditionistrue :valueifconditionisfalse);
+      //eg:(i%2==0 ? true : false)
+String even = (i % 2 ==0 ? "YES" :"NO");	
+
+
+>Loop's 
+for(int i = 0; i < 10 ; i++); //(when you know the limit)
+
+
+>while loop
+while(i < 5){    // IF you don't know the limit;
+System.out.println("yes");
+i++;
+}	
+
+>Do while 	  
+Syntax: do{
+         System.out.print("ln");   // code will execute atleast once.
+          increment;
+        }while(condition);
+
+	  
+> break statement will break out of your loop and continue will go to the next iteration.
+
+eg:  for (int i = 1 ; i <= 10 ; i++){
+      if(i % 2!= 0);
+	   continue;
+	   System.out.print(i);
+	}  
+	   
+O/P->>>>>2,4,6,8,10	
+
+//Primitive types
+Primitive type is always stored in Stack memory   
+   
+
+// Reference Types...
+	Planet jupiter = new Planet // jupiter is the reference variable. All objects are stored in heap memory
+Actual objects are created on the heap and the reference to that location is stored in Stack 
+
+for example:
+Animal dog = new dog();
+      dog.id = 5672;
+
+
+
+Animal dof = new Animal(67);
+Animal cat = new Animal(89);
+
+dog = cat;
+cat.id = 
+
+
+>>>==
+ for primitive it compares the values
+ for reference it compares the whether they are refering to same objects or not.(if the values are same then to it can return false)
+
+
+
+>>String 
+
+eg. String str = "Test";
+                  0123
+    str.length()  // this will return 4 that is length of string.
+String.charAt(0) will return T.,
+
+
+eg.String str1 = "This is a lot of text";
+  str1.substring(5);  O/P -> This will return the string after 5 index.
+  str1.substring(5,13); O/P -> this will return the substring where 5 index is included and 13 index in not included.
+
+
+
+//To Find the substring
+ String str1 = "This is really good"
+str1.contains("really");will return true;
+ str1.indexOf("really");// This will return the index of first index of the string.
+
+//To Find the particular character
+ String str1 = "this is really good";
+  str1.indexOf('i') // will return the index of first occurance of i;
+
+// to find the last occurance of character
+  str1.lastIndexOf('i') // This will return the last index of i;
+
+
+//str1.startsWith("tausis") will return boolean;
+//str1.endsWith("tatat") will return boolean;
+
+//str1.isEmpty(); // this will check whether the string is empty or not.
+
+// for equallity
+
+str1.equals(str2)  // This will check for the equality as well as values  (will return boolean)
+str1.equalsIgnoreCase(str2) // This will check the values and ignore the upper cases and lower cases.
+
+
+
+
+.............................Modifying the values of String (this is called immutability)..........................................
+ srt1.concat(str2); this will not work.
+
+str3 = str1.concat(str2); this will work.
+
+str.trim() .. to remove the front and back spaces in string.
+
+
+>>Rules of concatination.
+it goes from left to right
+ 	eg: "1" + 2+ 3:  output for this is "123";
+             1 + 2 + "3": output for this is "33";
+             "2" + (9 + 3) : output for this is "212";
+
+>>Join
+String str1 = String.join(",","a","b","d");  O/P -> "a,b,d"
+
+>>replace
+"abcd".replace('c','i')  O/P ->abid     --> for characters
+
+
+>>You can replace the string as well
+"ascd".replace("as","df")  O/P ->"dfcd"
+
+
+
+>>StringBuffer is the new java class to create String.
+
+eg: StringBuffer str = new StringBuffer("TEST");   // StringBuffer is Muttable.
+    str.append("123")
+    Sout(str)  O/p -> TEST123 
+
+1.str.setCharAt(1,'p')
+
+
+>>StringBuider str = new StringBuider("Astha");          // StringBuffer is thread safe while StringBuilder is not.
+
+
+
+
+--------For upper case-----
+Character.isUpperCase(str.charAt(i))
+
+----for isdigit()
+Character.isDigit(c); this will return true if the digot is present between the range of 0 to 9;
+Character.getNumericValue(c)// This method will take the character and return the numeric value for that..
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+Wrapper classes ? 
+Primitive :int, short, long, byte, char,boolean,double, float
+Wrapper class:Integer, Short, Long, Character, Boolean, Double, Float
+
+
+Why do we need Wrapper classes????
+Creation from other data types
+        Integer hundred = Integer.valueOf("100");
+        Boolean value = Boolean.valueOf("True");
+        System.out.println(hundred);
+        System.out.println(value);
+
+O/P-> 100,true
+
+
+................Creation of Wrapper classes..
+           1.way    Integer integer = new Integer(5);//   These will not be equal as they are immutable. this will create the new integer every time
+		    Integer integer = new Integer("5");//	
+
+
+	
+           2.way    Integer integer1 = Integer.valueOf("5"); // these are equal . this will not create new integer everytime.
+
+
+           3.way   Integer seven = 7; Internally this is also using the valueOf()method;
+		   Integer seven1 = 7;
+
+                    seven == seven1(this will return true)
+
+
+max_value
+Integer.MAX_VALUE;  this will return the maximum value an interger can hold;
+Integer.MIN_VALUE;  this will return the minimum value an integer can hold;
+Integer.SIZE;     this will return the size; 
+
+
+
+-----------------------LocalDate(it can hold the date), LocalDateTime(can store both date and time), Localtime(it can hold the time)     ----(these are date classes)
+		       import java.time.localDate	to import everything all together --> import java.time.*; (these are also immutable classes)	
+
+  1.LocalDate now = LocalDate.now()
+    sout(now)  -->2023-08-01	
+
+  2.LocalDateTime now = LocalDateTime.now();
+     sout(now)  -->  2023-08-01T20:23:24.860
+	 
+	 
+//Array's
+
+int[size]  marks = new int[size];
+int[size] marks = {2, 5, 6, 9, 8};  // by deafault the values are zero.
+
+marks.length will give the size of the array. // here length is the property.In Strings its the function.
+
+object array:Persons[]  person = new Persons[5]; here the default value of the objects will be null.
+// Arrays.toString to print the arrays.	
+
+-----------------Inhenced for LOOP:
+int[]  marks = new int[5];
+
+for (int mark : marks){
+System.out.print(mark);
+}
+
+------------------For filling the same values in Arrays.
+Arrays.fill(marks,100);// This will fill the arrays with the values of 100.
+
+
+------------------Compare Arrays
+  Method: Arrays.equals(Array1,Array2)
+
+  ---------Array Sort
+  Arrays.sort(Array1)
+  
+  ------------when we need to accept multiple arguments.
+	void print(int... values){                           // This variable argument should be the last argument in the function.
+	System.out.println(Arrays.toString(values));
+	}
+
+
+-----------------------object oriented programme..
+
+1. Inheritance  --Every other class will inherit the Object class or some other child class.	
+
+>..Overriding 
+when we override the function in the child class in sub class.
+
+Multiple inheritance is not allowed in java.
+eg : class Dog extends Animal , Pet{
+}                                        // This is not allowed in java.
+
+
+Inheritance hierarchy is possible as Pet extends animals.Dog extends Pet  // This is allowed
+
+
+>>>>>>>>>instanceof return the true when the object is correct instance of class.
+Eg:pet instanceof Animal  --returns true;
+   animal instanceof object --- returns true;
+	
+--------------------------------Introduction to Abstract classes-----------------------------------------------
+Note: you can't create objects or instance of the Abstract classes.you can only extend them.we need to provide the implementation for each of the method.
+
+	
+eg: abstract class 	AbstractAnimal{
+    abstract public void bark();
+     }
+.......Sub class will provide the implementation of this abstract function.
+
+class Dog extends AbstractAnimal{
+ public void bark(){
+ System.out.print("Bow Bow")
+ }
+ 
+}
+
+--------------Main Method-------
+
+Dog dog = new Dog();
+dog.bark();
+
+
+-----------Note: if abstract class extends another abstract class it may not provide the implementation of the abstract method of the classes.
+                 you can have the non-abstract method inside the abstract class.
+
+
+
+
+--------------Interfaces--------------
+
+public interface Gamingconsole{
+public void up();
+public void down();
+public void left();
+public void right();
+}
+
+public class MarioGame implements GamingConsole{
+
+@Override
+public void up(){
+System.out.print("jump');
+
+}
+}
+
+
+Note: 1.we can have a multiple implementation of the methods in different classes.Two or more classes can implement the methods in their own way.
+      2.one Interface can extend another interface.	
+	  3.If one Interface extends another interface , then the class which extends it should implement both its method ahich are present in Interface1 and Interface2.
+	  4. In interfaces you can create the constant.
+	    eg:interface Interface3{
+		   int test = 5:  // This is constant you can't change the value for this.
+		}
+      5.If we are implementing the interface and we dont want to implement all its methods we can make the class Abstract.
+	  
+	  
+	  
+------------------------Difference between Abstract class and Interfaces
+   1. In interface we can't call anything private everything is public wherease in Abstract class we will have private method.
+   2. In interfaces we can't have variables(we can have only constants like int test = 5; however in the abstract class we can have the variable.
+   3. A class can implement number of interfaces.
+   4 . you can't inherit from two multiple classes.
+
+
+
+-------------------Collections(List,Set, Queue, Map  --(Interfaces)------------------------
+   
+Create list
+eg: List<String> words = List.of("Apple","Bat","Dog"); java 11
+ size()-- for finding the length;
+words.get(index) --element at index 0;
+words.contains("Apple") will return the true ir false;
+words.indexOf("Apple") will return the index of the apple. //If the word is not present it will return the -1;
+
+
+-----------------Immutable and Mutable List-------------------------------
+Anything we create of function 
+for eg: List<String> words = List.of("Apple","Bat","History");  // here we cannot add the values to the list since its the immutable list.
+
+-->If we want to create the muttable list we can create using ArrayList, LinkedList or Vector..
+
+eg: List<String> wordArrayList = new ArrayList<String>(words);
+    List<String> wordLinkedListList = new LinkedList<String>(words);
+	List<String> wordvector = new Vector <String>(words);
+
+
+
+--------->>.......Accessing the element is very fast in array and deletion and addition is very fast in linked list.	
+--------->>...Vector and ArrayList difference   
+Vector is Thread safe..they have synchronized methods. 
+
+
+----Iteration in list:
+1. for loop
+2. inhenced for loop
+3. Iterator           In case of modification we should use Iterator.// In case of Inhenced for Loop it is not advisable to modify the elememnts in between (specially deletion)
+ eg.Iteration iterator = words.iterator();
+     while(words.iterator.hasNext()){
+	  System.out.print(iterator.next());	
+	 }
+	 
+	 
+---------------------------List and ArrayList-----------------------------------
+1.Methods to sort
+-->Collections.sort(ArrayList)  -- sort is the static method
+
+toString is used to print the data of objects.
+
+
+Note: if we want to compare objects we can implement Compare interface and then implement its functions.
+After this we can use 
+          eg: Collections.sort(student1)
+		  
+		  
+		  
+-------------------------Set Interface extends Collection	
+
+eg: Set<String> set = Set.of("Apple","BANANA","Cat")
+    HashSet<String> set = new HashSet<>(set)   // Dulication is not allowed.
+	                                           // This does not preserve the order.
+											   
+-----Hashing function is used to decide which element is going into which position.	
+----you can delete , add and search in hashtable ...In jave we use hashcode.
+
+
+-------------------Tree ---- left is smaller and right is greator    ---keeps the data in sorted order.
+
+1.Searching is easy..
+						
+
+
+-----HashSet-----------------------------------------------------------------------
+
+Set<Integer> numbers = new Set<>(); here the insertion order as well and printing order is not preserved.
+
+
+Set<Integer> numbers = new LinkedHashSet<>();  //In this the insertion order is preserved.
+
+Set<Integer> numbers = new TreeSet<>();// here the numbers are stored in sorted order.// It does not care about the insertion order.
+
+...But Since this is the Set Interface the duplicates are not allowed in either of them.
+
+
+eg: List<Characters> characters  = List.of('A','Z','A','B','Z','F');
+
+Converting in to tree set:
+eg: Set<Character>  TreeSet  = new TreeSet<>(characters); 
+
+2 way: TreeSet<Interger>  numbers = new TreeSet<>(Set.of(65,54,34,12,99));   // this is always be in sorted order...
+
+------------------------These methods are for only sorted order...
+1.....numbers.floor(40)  returns a number less than equal to 40.     numbers.ceiling(34) >= 34
+
+2.....numbers.lower(34) returns a number less than 34.                numbers.higher(34)  > 34.
+ 
+ 
+ 
+ 
+ -------------------------Subset-------------------------
+ 
+ numbers = [12, 34, 54, 65, 99]
+ 
+ function -----> numbers.subSet(20, 80)   --> returns between 20 and 80. --here the lower limit is inclusive and the upper limit is exclusive.
+       // if we want to specify explicitly we can use this...
+	       numbers.subSet(20,true,80, true)  --> it depends....
+        
+ ------> numbers.headSet(50)   returns all numbers upto 50.
+ -------> numebers.tailSet(50) returns all numbers after 50.
+ 
+ 
+ 
+ ----------------------Queue interface----------------------------------------------
+ 
+ 
+
+  Queue<Integer> queue = new PriorityQueue<>();
+  
+  1. queue.poll()   will return null if the queue is empty.
+  
+  2. queue.offer("Astha")   will return true if this is added to the queue.
+  
+  3. queue.addAll("tapas" , "astha" , "Shivali")
+   
+  4. queue.poll()  will return the polled element i.e -->tapas...
+
+  -----How to customize the priorityqueue--------------------
+  
+  
+  we can do this by using comaparator----------
+  Section 22 .    256.....     ..............258  ...............262
+  
+  
+  
+  -------------------Map Interface (it does not implement map interface)  KEY value pairs...
+  
+  
+  Map<String,Integer>  map =  Map.of("A",3,"B",5,"C" 5);
+  
+  
+  NOTE:Anything we create with the of method is immutable...
+  
+ MAP----> {c= 5, B = 5, A = 3}:
+ 
+ Map.get("C") returns 5;
+ Map.containsKey("A")  returns true;
+ Map.containsvalue(3)  returns true;
+ Map.keySets()    will return the set of keys..
+ Map.values()    will return the set of values...	
+ 
+ 
+ 
+ 
+ ----Difference between HashMap, linkedHashMap, TreeMap------------------
+ 
+ 
+ 1. HashMap<String , Interger> hashmap = new HashMap<>();
+    hashmap.put("A", 5)
+	hashmap.put("C", 3)
+	hashmap.put("Z", 5)
+	
+	results:It looses both the sort order and insertion order...
+	
+2.LinkedHashMap<String , Interger> hashmap = new LinkedHashMap<>();	
+
+LinkedHashMap.put("A",24)
+LinkedHashMap.put("T",24)
+LinkedHashMap.put("Z",24)
+
+
+results: It stores the insertion order...
+
+3.  TreeMap<String , Interger> treemap = new TreeMap<>();	
+   treemap.put("a",8)
+   treemap.put("B",8)
+   treemap.put("c",8)
+   
+   
+   
+   results : It stores in the sorted order..
+   
+   
+   
+   
+-------------------------------------   
+
+
+
+Hash  --> unordered and unsorted..
+linked --> Insertion order is there , nut unsorted..
+tree ---> sorted order.. whenever you see a tree by default it will have NavigableSet..natural sorted order.
+
+
+
+------------------Generics-------------------------
+
+eg: public class MyCustomList<T>{
+    ArrayList<T> list = new ArrayList<T>();
+	
+	
+	public void addelement(T element){
+	 list.add(element);
+	}
+	
+	public void removeelement(){
+	list.remove(element);
+	}
+    
+}
+
+
+class GenericsRunner{
+public static void main(String[] args){
+
+MyCustomList<String> customlist = new MyCustomList<String>();
+customlist.addelement("Element1");
+customlist.addelement("Element2");
+
+MyCustomList<Integer>  customlist1 = new MyCustomList<Integer>();
+customlist1.add(Integer.valueof(4));
+customlist1.add(Integer.valueof(5));
+
+
+}
+
+}
+
+
+
+---------------------Introduction to Functional programming----------------------
+
+difference between object oriented programing and Functional programming....
+
+1.Fucntions are first class citizen.. in Functional programming..
+
+
+-----------Lambda Expressions------------------------   Functions are passed as parameter in fucntional programing..
+eg:  private static void printWithFP(list<String>  list){
+     list.stream().forEach(element -> System.out.print(element);
+}
+
+
+
+Filter:private static void printWithFilter(list<String>  list){
+     list.stream().filter(elememnts->elememnts.endsWith("at")).forEach(element -> System.out.print(element);
+}
+
+ 2.private static void printWithevennum(list<String> list){
+   list.stream().filter(element -> element % 2 == 0).forEach(elememnt -> System.out.print(element);
+ 
+ }
+ 
+3.private static void printWithoddnum(list<String> list){
+   list.stream().filter(element -> element % 2 != 0).forEach(elememnt -> System.out.print(element);
+ 
+ } 
+
+ 
+ 4.Find the sum of numbers.
+ reduce();
+ 
+ int sum = list.stream().reduce(0,(number1 , number2) -> number1 +number2);
+  System.out.print(sum);
+  
+  
+------------Terminal operations--------
+forEach()
+reduce() 
+collector()
+
+
+list.of(23,34, 78, 89).stream().filter(e->e%2==1).collect(Collectors.toList());
+
+
+List.of(1, 5, 6, 7, 9).stream().max((n1,n2) -> 	Integer.compare(n1,n2)).get()  // to get the maximum value 
+
+ 
+ 
+-----------intermediate operations  --- will take streams and return streams..
+
+sort()
+numbers.streams.sorted().forEach(elememnt -> System.out.println(element); 
+
+distinct();// for finding the distinct numbers in streams.
+numbers.streams.distinct().sorted().forEach(element - > System.out.println(element);
+
+Map();
+numbers.stream().dictinct().map(element -> elememnt*elememnt).forEach(System.out.println(elememnt);
+
+
+-------------------------------------------------
+IntStreams
+
+IntStream.range(1,11).map(elememnt -> elememnt*elememnt).forEach(p -> System.out.println(p);
+
+-----------------------------To produce the cube of a number---------------------------------------------
+eg.    public static List<Integer> getCubesOfFirstNNumbers(int n) {
+        // Write your code here
+        return IntStream.range(1,n+1)
+        .map(number ->number*number*number).boxed().collect(Collectors.toList());
+        
+    }
+
+
+
+------------Multithreading-------------------------------------
+1.Extending the Thread class.
+2.implementing the Runnable interface.
+
+
+Example of Thread classs..
+
+class Task1 extends Thread{
+ public void run(){
+ for (int i = 0 ; i < 10; i++){
+ System.out.print(i);
+ }
+ }
+
+}
+
+public class treadRunner{
+public static void main(String[] args){
+
+Task1 task = new Task1();
+
+task.start();
+
+
+}
+}
+
+
+
+--------------States of Thread----------------------
+>NEW  thread is ready but nobody has told it to start.
+
+
+
+
+-------------------Exception Handling------------------------------------------------Exception is a class in java 
+
+
+
+Note:if we have any code after the line which is throwing the exception the the after line will not be executed.
+
+exception goes up to call chain..
+
+
+
+Try and Catch........
+
+
+eg: try{
+      String str = null;
+		string.length();
+		System.out.print("Method Ended");
+	  }	catch(Exception ex){
+	     ex.printStackTrace();    // This will the expose the exception.
+	    }finally{
+		 System.out.print("this is always called even if the exception is called")
+		}
+
+Note: you can have multiple catch block..
+Null pointer exception and indexoutofbound they are sthe subclasses of Exception class.
+
+
+Checked and Unchecked Exception..	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------Files and Directory------------------------
+
+Path is a class.
+
+--->how to read the files in the current directory.
+
+
+public static void main(String[] args){
+Files.list(Paths.get(".")).forEach(System.out::println);
+}
+
+
+
+When we have to go recursively...means getting files under files.
+Path currentDirectory = Paths.get(".");
+
+
+Files.walk(currentDirectory,2(how many deep we want to go)).forEach(System.out::println);
+
+
+
+---What if we want to read only java files.
+
+
+This is under void main.
+
+
+Predicate<? super Path> predicate = path ->String.valueOf(path).contains("java");
+
+
+Files.walk(currentDirectory,4).filter.(predicate).forEach(System.out::println);
+
+
+
+2.Method.
+BiPredica<Path,BasicFileAttributes> matcher = (path.attributes) -> 	
+File.find(currentDirectory,4,matcher);
+
+
+
+
+---------------------Read content from files--------------------------------------
+
+
+take a local variable.
+
+Path  pathFileToRead = Paths.get("./resources/data.txt");
+Files.readAllLines(pathFileRead);                                      // This will return the streams of lines..
+
+
+
+--------Process one at a time..
+Files.lines(pathfilestoRead).forEach(System.out::println);
+
+
+
+
+
+-------------------------Writing to a file-----------------
+apath  pathfiletowrite = Paths.get("./resources/data.txt");
+
+List<String> list = List.of("Apple","Mango","Cat","Dog");
+Files.write(pathfiletowrite.list);
+
+
+
+
+
+--------------Concurrency-------------------------
+
+synchronized -- if we put this keyword in front of function name only one thread can run that function at one point of time..
+
+
+
+
+---------------------Need for Concurrent Map-----------------to provide thread safety--
+Concurrenthashmap
+
+
+
+------------------------------
+When we implement equals method , their hashcodes should be also equal.
+When their ID's are same they hashcode should also be same.
+
+
+-------------------------
+Public class is avilable every where in different package as well only.
+Protected can only be used in the same package or its subclasses.
+private methods are present in the same class.
+
+default class is not availabe everywhere.It is available in the same package.
+
+you can't use protected and private in a class.	
+
+-----------When you extend final class nobody can extend it..
+
+class someclass extends Finalclass.   it cannot happen..
+you cannnot over ride final method..
+
+----Final variable and final argument
+final int i = 6;
+
+public static doSomethingElse(final int arg){  // you cannot change the value of the final argument.
+
+}
+
+
+
+---Why we need static variables-----------------------
+static variable means count variable is shared between  multiple instances of the object.
+When we have class methods to describe static methods.
+
+In the static method you cannot have non static values excessed..
+But you can access static members in non static methods.                 Static mein only static.
+
+
+public static final int second_in_minute = 60;  // This is final.(Constants)
+
+
+Nested Class is of two types...
+1.Inner class    : For this we cannot create the instance of the inner class without createing
+2.Static class StaticNestedClass. Without creating  an instance of the containing  class we can create the instance of the static nested class.
+
+
+
+
+eg:
+class Default{
+
+public class NestedClassRunner{
+
+class InnerClass{
+
+}
+
+
+
+Static class StaticNestedClass{
+
+}
+
+public static void main(String[] args){
+InnerClass innerclass = new innerclass():  // This is not allowed.
+StaticNestedClass statisnestedclass = new StaticNestedClass();// This is possible as static class does not need any instance of inclosing class.
+
+NestedClassRunner nestedclassrunner = new NestedClassRunner();
+Innerclass  innerclass = nestedclassrunner.new Innerclass();
+
+}
+}
+
+
+
+-----------------------ENUMS-----------------------stands for Enumerations..---enum is keyword in java.
+
+
+eg:   enum Season{
+       WINTER, SPRING, SUMMER, FALL;
+     // 0   ,    1   ,     2   ,   3
+
+      }
+    public class EnumRunner{
+    pub;ic static void main[String[] args){
+     Season season = Season.FALL;
+
+     Season season1 = Season.valueOf("WINTER");
+     System.out.print(season1);
+     System.out.println(season1.ordinal());  // This will print 0.
+
+     Season.values()---> This will return the all the values present in ENUM.
+}
+
+   }
+
+
+
+---->How to store the values in the database by assiging the vaues to it.
+
+eg:             enum Season{
+        WINTER(1), SUMMER(2), FALL(3), SPRING(5);
+   
+       private int value;
+
+       private Season(int value){
+       this.value = value;
+   }
+
+    public int getValue(){
+    return this.value;
+}
+}
+
+
+
+INBULIDENUMS   --DayOfTheWeek,Month These are default ENUMS.
+
+
+
+
+
+--------------------------JAVA Versions----------------------
+
+JAVA MODULARISATION OF Applications.
+---------------------------------------------------------------------------
+copyOf   -- IF we want make immutable list from the list 
+same for map and set.
+
+
+
+--------------------------------------------------Spring Framework--------------------------------------------------------
+
+
+GameRunner directly connected to Mario , Contra, Pacman -----This is tightlt coupled.
+GameRunner - Interface(Gaming console)  - >  Mario , Contra, Pacman  --- This is loosely coupled.
+
+
+What is Spring Container?// Spring Context//IOC container
+1..Manages Spring 	beans and their lifecycle.
+2..Two types of IOC Containers.
+
+a. Bean Factory--> Basic Spring Container.
+b. Application Context  -> Advanced Spring Container with enterprise- specific features
+ b.1  -> easy to use in web appication.
+  b.2 ->easy internationalisation.
+  b.3 ->easy integration with spring AOP.	(used for Rest APIS and microservices)
+
+
+
+JAVA BEAN / POJO (Plain old java object) Every object is POJO / Spring Bean.
+
+condition for java bean.
+
+1.public no arg constructor(except default constructor)
+2. requires getters and setters.
+3. should implement Serializable(interface)	
+
+
+
+Spring Bean..
+Anything that is managed by a spring framework is called spring bean.
+
+
+-----ANNOTATIONS-----------------------------------
+1.  way @primary 
+2.  way @Qualifier     if we have two classes and they are implementing the same interface.
+
+
+
+
+@Component This is done to tell the Spring to create the Bean.
+
+@ComponentScanw(Path if that is in different package) is used to tell whether we need to search for Component.. 
+
+
+
+@Primary - A bean should be given preference when multiple candidates are qualified.
+@Qualifier - A specific bean should be auto-wired(name of that bean is used as qualifier)
+
+ALways think of the perspective of the class using Sorting Algorithm:
+1. just one @Autowired will give me(preferred sorting algo).
+2. @Autowired + @Qualifier:   I want to use specific Sorting Algorithm.
+
+Note: @Qualifier has higher priority than @Primary.
+
+
+eg:
+
+
+------------------Dependencies injection types-------------------
+1...Constructor based 
+2. Setter based.
+3.Feild..
+
+
+@Component -> An instance of the class will ne managed by Spring Framework.
+@ComponentScan -> It scans packages (@ComponentScan("package name"));
+Spring Beans : An object managed by Spring Framework.
+IOc Container:->Manages the lifecycle beans and dependencies.
+Autowiring ->  The process of wiring In spring dependencies for a Spring Bean.
+
+
+
+
+---------Comparing @Component and @Bean-----------------------------
+
+@Component bean is created by Spring Framework.
+@Bean  we write the bean creation code.
+
+@Bean is used in the Spring configuration classes.
+@ Component can be used in any java classes.
+
+
+--------------------------------Spring Beans Scopes--------------------------
+Spring Beans are defined to be used in a specific scope.
+
+1.Singleton:one object instance per Spring IOC Container.
+2.Prototype:possibly  many object instances per Spring IOC Container.
+
+Scopes applicable ONLY for web aware Spring_ApplicationContext.
+>Request - One object instance per single HTTP request.
+>Session: -One object instance per HTTP session.
+>Application:One object instance per web application runtime.
+>Web_Socket:one object instance per Web_Socket instance.
+
+
+
+
+-----------------JAVA Singleton(GOF) vs Spring Singleton
+
+Spring Singleton: One object instance per Spring IOC Container.
+JAVA SINGLETON:(GOF):one JAVA instance per JVM.
+
+
+
+-------------------PostConstruct and PreDestroy------------------
+@PostConstruct annotations are used after the dependencies are resolved in the IOC Containers.
+
+@PreDestroy-- This is used on a method as acallback notification to signal that the instance is in the process of being removed.
+
+-----Evolution of jakarta EE: J2EE  vs java EE.
+ J2EE -> JAVA EE -> jakarta EE:
+ 
+jakarta EE:
+1.jakarta Server Pages(JSP)
+2.Jakarta Standard Tag Library(JSTL)
+3.Jakarta Enterprise Beans (EJB)
+4.Jakarta Restful web Services(JAX-RS)
+5.JAVA Persistance to connect data base.
+
+
+
+--------------------String Stereotype Annotations------------------------------------------
+
+1. @Component   - Generic Component  can be used for any class.
+    Specialization for @Component....
+	
+	a.@Service - indicates that the annotated class has bussiness logic.
+	b. @Controller -indicates that the annotated class is "Controller"(eg. web Controller)
+	   Used to define controllers in your web application and Rest Api.
+	   
+	c.@Repository - indicates that an annotated class is used to retrive and/or manipulate data in database.
+
+
+2.@Configuration
+--Indicates that a class declares one or more @Bean Methods and may be processed by the Spring Container to generate bean definations.
+
+
+
+3.@ComponentScan 
+--Define specific packages to scan for components.If specific packages are not defined,scanning will occur from the package of the class that declares the annotations.	
+
+4.@Inject 
+ -- similar to @Component
+
+
+
+
+
+----------------------------Spring BOOT----------------------------------------------
+
+
+Web Application -> Spring Boot Starter web.
+Rest API -> Spring Boot Starter Web.
+Talk to database using Database -> 	Spring BOOT Starter Data JPA.
+Talk to Database using JDBC   -> Spring Boot Starter JDBC.
+Secure your web Applicstion and REST API -> Spring Boot Starter Security.
+---------------------------------------------------------------------------
+
+Spring Boot AutoConfiguration ---
+
+1.Spring Boot Provides Autoconfiguration.
+  a. Basic configuration to run your application using this frameworks defined in your maven dependencies.
+  b. Auto Configuration 
+  
+  
+  
+  
+---More features about Spring------
+
+
+1. Spring Boot Actuator:
+Monitor and manage your application in your production.
+  --> Provides the number of endpoints..
+  beans : Complete list of Spring beans in your app.
+  health:Application 	health information.
+  metrics:Application metrics.
+  mappings:Details around request mappings.
+  
+  
+------Spring Boot Dev tools---------------------
+
+
+
+Database H2 ->In Memory database.
+ 
+
+
+ 
+
+ 
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		 
+
+
+
+	
