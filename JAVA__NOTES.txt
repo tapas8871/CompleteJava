@@ -184,6 +184,8 @@ eg: StringBuffer str = new StringBuffer("TEST");   // StringBuffer is Muttable.
 
 >>StringBuider str = new StringBuider("Astha");          // StringBuffer is thread safe while StringBuilder is not.
 
+StringBuffer is thread-safe and synchronized whereas StringBuilder is not. That's why StringBuilder is faster than StringBuffer. String concatenation operator (+) internally uses StringBuffer or StringBuilder class.3 Aug 202
+
 
 
 
