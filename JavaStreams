@@ -346,7 +346,39 @@ public class JavaStreams {
         Employee nthHighestSalaryEmployee = employeeList.stream().sorted(Comparator.comparing(Employee::getSalary).reversed()).skip(n-1).findFirst().get();
         System.out.println(nthHighestSalaryEmployee);
 
-        
-    }
+
+       /* HashMap */
+       HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "A");
+        map.put(2, "B");
+        map.put(null, "F");
+        map.put(0, "o");
+        map.put(null, "Test");
+
+
+        // Compute if present
+        map.putIfAbsent(null, "test");  // it will check for the key and then value if something is absent it will add this.
+        map.putIfAbsent(8, null);
+
+        for (Map.Entry<Integer, String> entryMap : map.entrySet()) {
+            Integer key = entryMap.getKey();
+            String val = entryMap.getValue();
+            System.out.print(" Key:  " + key + " " + "value: " + val);
+        }
+
+        // keySet
+        for (Integer key : map.keySet()) {
+            System.out.println("Key: " + key);
+        }
+
+        // valuesSet
+        Collection<String> values = map.values();
+        for (String val : values) {
+            System.out.println("values " + val);
+        }
+
+
+        }
+
 
 }
