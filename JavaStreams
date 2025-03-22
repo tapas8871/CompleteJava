@@ -347,6 +347,15 @@ public class JavaStreams {
         System.out.println(nthHighestSalaryEmployee);
 
 
+// Second Largect element in Array//
+OptionalInt secondLargest = Arrays.stream(arr)
+            .distinct()  // Remove duplicates
+            .boxed()     // Convert int to Integer for sorting
+            .sorted((a, b) -> b - a) // Sort in descending order
+            .skip(1)     // Skip the largest element
+            .findFirst(); // Get the second largest
+
+
        /* HashMap */
        HashMap<Integer, String> map = new HashMap<>();
         map.put(1, "A");
